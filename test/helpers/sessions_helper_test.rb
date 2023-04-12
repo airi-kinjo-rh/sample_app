@@ -7,9 +7,8 @@ class SessionsHelperTest < ActionView::TestCase
     remember(@user)
   end
 
-  # なぜかこのテストだけ通らない。謎
   test "current_user returns right user when session is nil" do
-    Rails.logger.info("testtttttttttt #{@user.inspect}, #{current_user.inspect}")
+      logger.debug("test: @user→ #{@user.inspect}, \ncurrent_user→ #{current_user.inspect}")
     assert_equal @user, current_user
     assert is_logged_in?
   end
